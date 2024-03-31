@@ -11,10 +11,13 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Checkbox
+import androidx.compose.material3.CheckboxColors
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
@@ -51,14 +54,9 @@ fun Card(task: Task){
         Row (
             verticalAlignment = Alignment.CenterVertically
         ){
-            val img =  if (task.isDone) R.drawable.square__2_ else R.drawable.stop
             val mark = if (task.isDone) TextDecoration.LineThrough else TextDecoration.None
-            Image(painter = painterResource(id = img),
-                contentDescription = "",
-                modifier = Modifier
-                    .padding(all = 10.dp)
-                    .size(20.dp)
-            )
+            Checkbox(checked = task.isDone,
+                onCheckedChange = {})
             Text(text = task.value,
                 modifier = Modifier
                     .padding(all = 10.dp)

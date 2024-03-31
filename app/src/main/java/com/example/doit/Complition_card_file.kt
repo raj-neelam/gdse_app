@@ -30,7 +30,8 @@ fun Competion_card(){
         Column (modifier = Modifier.fillMaxWidth()){
             Text(text = "Your Tasks",
                 fontSize = 30.sp,
-                modifier = Modifier.padding(start = 20.dp))
+                modifier = Modifier.padding(start = 20.dp),
+                color = Color.White)
             Box(modifier = Modifier
                 .fillMaxWidth()
                 .border(1.dp, Color.White, RoundedCornerShape(10.dp))

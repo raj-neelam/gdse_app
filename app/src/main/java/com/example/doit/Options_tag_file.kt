@@ -35,21 +35,27 @@ fun Tag_box(tag_name: String){
 }
 
 @Composable
+fun Multi_tags_creator(uniqueTags: List<String>){
+    LazyRow {
+        items(uniqueTags.size) { index ->
+            Tag_box(uniqueTags[index]) // Display each box in the row
+        }
+    }
+}
+
+@Composable
 fun Options_List(uniqueTags: List<String>){
     Box(modifier = Modifier
         .padding(all = 10.dp)
         .fillMaxWidth()){
         Row {
-            Icon(painter = painterResource(id = R.drawable.trash__1_),
+            Icon(painter = painterResource(id = R.drawable.iconizer_trash__1_),
                 contentDescription = "",
-                modifier = Modifier.size(30.dp))
+                modifier = Modifier.size(30.dp),
+                tint = Color.White
+            )
             Spacer(modifier = Modifier.width(10.dp))
-//                tag_box("All")
-            LazyRow {
-                items(uniqueTags.size) { index ->
-                    Tag_box(uniqueTags[index]) // Display each box in the row
-                }
-            }
+            Multi_tags_creator(uniqueTags)
         }
     }
 }
