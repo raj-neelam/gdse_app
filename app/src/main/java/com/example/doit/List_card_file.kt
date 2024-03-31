@@ -18,9 +18,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
+import kotlin.concurrent.timer
 
 @Composable
 fun Card_List(data : List<Task>){
@@ -49,7 +51,8 @@ fun Card(task: Task){
             .padding(vertical = 5.dp, horizontal = 10.dp)
             .fillMaxWidth()
             .background(Card_background_col, RoundedCornerShape(10.dp))
-            .border(1.dp, Card_border_col, RoundedCornerShape(10.dp))
+            .border(1.dp, Card_border_col, RoundedCornerShape(10.dp)),
+
     ){
         Row (
             verticalAlignment = Alignment.CenterVertically
@@ -66,3 +69,5 @@ fun Card(task: Task){
         }
     }
 }
+
+
